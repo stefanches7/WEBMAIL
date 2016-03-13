@@ -3,4 +3,4 @@ sudo /etc/init.d/nginx restart
 
 sudo ln -sf /home/box/web/conf/hello.py /etc/gunicorn.d/hello.py
 sudo /etc/init.d/gunicorn restart
-gunicorn /home/box/web/hello.py
+gunicorn -b 0.0.0.0:8080 hello:app
