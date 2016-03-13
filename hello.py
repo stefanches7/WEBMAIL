@@ -1,6 +1,6 @@
 
 def app(environ, start_response):
-  lst = environ["QUERY_STRING"].split('&')
+  lst = str(environ["QUERY_STRING"]).split('&')
   response = ''
   for query_item in lst:
     response+=query_item+"\n"
