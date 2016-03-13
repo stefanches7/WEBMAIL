@@ -1,7 +1,6 @@
 from werkzeug.contrib.fixers import ProxyFix
-from flask import Flask
-app = Flask(__name__)
-def myapp(environ, start_response):
+
+def app(environ, start_response):
   lst = environ["QUERY_STRING"].split('&')
   response = ''
   for query_item in lst:
@@ -10,6 +9,4 @@ def myapp(environ, start_response):
   return response
   
 app.wsgi_app = ProxyFix(app.wsgi_app)
-
-if __name__ == '__main__':
-    app.run()
+app.run()
