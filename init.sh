@@ -6,4 +6,4 @@ sudo pip install Flask
 sudo ln -sf /home/box/web/conf/hello.py /etc/gunicorn.d/hello.py
 sudo ln -sf /home/box/web/hello.py /usr/local/lib/python2.7/hello.py
 sudo /etc/init.d/gunicorn restart
-gunicorn -b 0.0.0.0:8080 hello:app --access-logfile logs/guni.access.log&
+gunicorn -b 0.0.0.0:8080 hello:app --access-logfile logs/guni.access.log &
